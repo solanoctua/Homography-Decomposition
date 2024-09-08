@@ -4,7 +4,7 @@ A homography is the most general formulation of linear transformations in 2D pro
 
 ### Homography Decomposition
 
-The homography matrix \( $H$ \) can be decomposed as:
+The homography matrix $H$ can be decomposed as:
 
 ```math
 H = H_S H_A H_P = 
@@ -198,15 +198,30 @@ Finally, Singular Value Decomposition (SVD) is used to obtain the homography mat
 A = U S V^T
 ```
 
-- $ U $ is a $ 2n \times 2n $ unitary matrix.
-- $ S $ is a $ 2n \times 9 $ diagonal matrix with non-negative real values arranged in descending order down the diagonal.
-- $ V $ is a $ 9 \times 9 $ unitary matrix.
+- $U$ is a $2n \times 2n$ unitary matrix.
+- $S$ is a $2n \times 9$ diagonal matrix with non-negative real values arranged in descending order down the diagonal.
+- $V$ is a $9 \times 9$ unitary matrix.
 
 ```math
+A =
 \begin{bmatrix}
-A = [ U_{1,1} \cdots U_{1,2n} \\
-⋮ ⋱ ⋮ \\
-U_{2n,1} \cdots U_{2n,2n} ]
+U_{1,1} & \cdots & U_{1,2n} \\
+⋮ & ⋱ & ⋮ \\
+U_{2n,1} & \cdots & U_{2n,2n}
+\end{bmatrix}
+\begin{bmatrix}
+𝑠_1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 𝑠_2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 𝑠_3 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 𝑠_4 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 𝑠_5 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 𝑠_6 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 𝑠_7 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 𝑠_8 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 𝑠_9 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\cdots & \cdots & \cdots & \cdots & \cdots & \cdots & \cdots & \cdots & \cdots \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 
 \end{bmatrix}
 ```
 ### Homography Matrix Estimation
