@@ -5,24 +5,36 @@ A homography is the most general formulation of linear transformations in 2D pro
 ### Homography Decomposition
 
 The homography matrix \( H \) can be decomposed as:
-
+$$
+\[
 H = H_S H_A H_P = 
-\left[ \begin{matrix} 
+\left[ 
+\begin{matrix} 
 sR & t \\ 
 0 & 1 
-\end{matrix} \right] 
-\left[ \begin{matrix} 
+\end{matrix} 
+\right] 
+\left[ 
+\begin{matrix} 
 K & 0 \\ 
 0^T & 1 
-\end{matrix} \right] 
-\left[ \begin{matrix} 
+\end{matrix} 
+\right] 
+\left[ 
+\begin{matrix} 
 1 & v^T \\ 
 0 & u 
-\end{matrix} \right] = 
-\left[ \begin{matrix} 
+\end{matrix} 
+\right] 
+= 
+\left[ 
+\begin{matrix} 
 A & t \\ 
 v^T & u 
-\end{matrix} \right]
+\end{matrix} 
+\right]
+\]
+$$
 
 
 Where:
