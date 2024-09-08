@@ -172,7 +172,7 @@ The homography matrix $H$ is a $3 \times 3$ homogeneous matrix. Its final elemen
 
 To solve for the homography matrix, we need corresponding coordinate points. Each pair of matched coordinate points yields two linear equations. Thus, at least four pairs of corresponding points are required to compute the homography matrix between two images.
 
-In practice, more than four pairs of corresponding points are typically used to account for coordinate errors caused by noise. With \( n \) correspondences (\( n \geq 4 \)), a matrix \( A \) with dimensions \( 2n \times 9 \) is generated:
+In practice, more than four pairs of corresponding points are typically used to account for coordinate errors caused by noise. With $n$ correspondences $n \geq 4$, a matrix $A$ with dimensions $2n \times 9$ is generated:
 ```math
 A = \begin{bmatrix}
 u_1 & v_1 & 1 & 0 & 0 & 0 & -u_1 u'_1 & -v_1 u'_1 & -u'_1 \\
@@ -192,7 +192,23 @@ h_{11} \\ h_{12} \\ h_{13} \\ h_{21} \\ h_{22} \\ h_{23} \\ h_{31} \\ h_{32} \\ 
 0 \\ \vdots \\ \vdots \\ \vdots \\ \vdots \\ \vdots \\\vdots \\ \vdots \\ 0
 \end{bmatrix}
 ```
+
 Finally, Singular Value Decomposition (SVD) is used to obtain the homography matrix $H$. The matrix $H$ is extracted as the solution to the equation $A \mathbf{h} = 0$, where $\mathbf{h}$ is the vector of the elements of the homography matrix.
+```math
+A = U S V^T
+```
+
+- $ U $ is a $ 2n \times 2n $ unitary matrix.
+- $ S $ is a $ 2n \times 9 $ diagonal matrix with non-negative real values arranged in descending order down the diagonal.
+- $ V $ is a $ 9 \times 9 $ unitary matrix.
+
+```math
+\begin{bmatrix}
+A = [ U_{1,1} \cdots U_{1,2n} \\
+⋮ ⋱ ⋮ \\
+U_{2n,1} \cdots U_{2n,2n} ]
+\end{bmatrix}
+```
 ### Homography Matrix Estimation
 
 For each pair of corresponding points, we derive two linear equations. We need at least 4 pairs of points to compute the homography matrix between two images. In practice, more than 4 pairs are used to account for noise.
