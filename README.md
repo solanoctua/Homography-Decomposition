@@ -95,33 +95,56 @@ The transformation of images is typically defined as the projection mapping betw
 Given homogeneous coordinates $(u, v, 1)$ in the first image and $(u', v', 1)$ in the second image, we have:
 
 ```math
-\left[ \begin{matrix} u' \\ v' \\ 1 \end{matrix} \right] = \left[ \begin{matrix} h_{11} & h_{12} & h_{13} \\ h_{21} & h_{22} & h_{23} \\ h_{31} & h_{32} & h_{33} \end{matrix} \right] \left[ \begin{matrix} u \\ v \\ 1 \end{matrix} \right]
+\left[
+\begin{matrix}
+u' \\
+v' \\
+1
+\end{matrix}
+\right]
+=
+\left[
+\begin{matrix}
+h_{11} & h_{12} & h_{13} \\
+h_{21} & h_{22} & h_{23} \\
+h_{31} & h_{32} & h_{33}
+\end{matrix}
+\right]
+
+\left[
+\begin{matrix}
+ u \\
+ v \\
+ 1
+\end{matrix}
+\right]
 ```
 
 Expanding:
 
 ```math
-u' = h_{11} u + h_{12} v + h_{13}
-v' = h_{21} u + h_{22} v + h_{23}
+u' = h_{11} u + h_{12} v + h_{13} \\
+v' = h_{21} u + h_{22} v + h_{23} \\
 1 = h_{31} u + h_{32} v + h_{33}
 ```
 
 The equations for the transformed coordinates $(u', v')$ in homogeneous coordinates are given by:
 
 ```math
-u' = h_{11} u + h_{12} v + h_{13}
-v' = h_{21} u + h_{22} v + h_{23}
+u' = h_{11} u + h_{12} v + h_{13} \\
+v' = h_{21} u + h_{22} v + h_{23} \\
 1 = h_{31} u + h_{32} v + h_{33}
 ```
 
 Further, by multiplying the denominator to the left, we can transform the equations into:
 
 ```math
-(h_{31} u + h_{32} v + h_{33}) u' = h_{11} u + h_{12} v + h_{13}
+(h_{31} u + h_{32} v + h_{33}) u' = h_{11} u + h_{12} v + h_{13} \\
 (h_{31} u + h_{32} v + h_{33}) v' = h_{21} u + h_{22} v + h_{23}
 ```
 ```math
---> 0 = h_{11} u + h_{12} v + h_{13} - h_{31} u' u - h_{32} u' v - h_{33} u'
+\Rightarrow 0 = h_{11} u + h_{12} v + h_{13} - h_{31} u' u - h_{32} u' v - h_{33} u' \\
+\Rightarrow 0 = h_{21} u + h_{22} v + h_{23} - h_{31} v' u - h_{32} v' v - h_{33} v' 
 ```
 
 This is a pair of homogeneous equations (since the right hand side is zero).
