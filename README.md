@@ -35,7 +35,7 @@ v^T & u
 \end{matrix} 
 \right]
 \]
-```math
+```
 
 
 Where:
