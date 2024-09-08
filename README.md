@@ -69,13 +69,11 @@ s_y r_{21} & s_y r_{22} & t_y \\
 3. **Affine Transformation (6 DoF)**:
 ```math
 H_A =
-\left[
 \begin{bmatrix}
 s_x r_{11} & S_h x r_{12} & t_x \\
 S_h y r_{21} & s_y r_{22} & t_y \\
 0 & 0 & 1
 \end{bmatrix}
-\right]
 ```
 
 4. **Projective Transformation (8 DoF)**
