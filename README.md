@@ -122,16 +122,6 @@ h_{31} & h_{32} & h_{33}
 
 Expanding:
 
-```math
-u' = h_{11} u + h_{12} v + h_{13}
-```
-```math
-v' = h_{21} u + h_{22} v + h_{23}
-```
-```math
-1 = h_{31} u + h_{32} v + h_{33}
-```
-
 The equations for the transformed coordinates $(u', v')$ in homogeneous coordinates are given by:
 
 ```math
@@ -159,6 +149,25 @@ Further, by multiplying the denominator to the left, we can transform the equati
 \Rightarrow 0 = h_{21} u + h_{22} v + h_{23} - h_{31} v' u - h_{32} v' v - h_{33} v'
 ```
 This is a pair of homogeneous equations (since the right hand side is zero).
+
+We rewrite these equations in matrix notation as $Ah = 0$: 
+
+```math
+\begin{bmatrix}
+u & v & 1 & 0 & 0 & 0 & -u'u & -u'v & -u' \\
+0 & 0 & 0 & u & v & 1 & -v'u & -v'v & -v' \\
+\end{bmatrix}
+\begin{bmatrix}
+h_{11} \\ h_{12} \\ h_{13} \\
+h_{21} \\ h_{22} \\ h_{23} \\
+h_{31} \\ h_{32} \\ h_{33} \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\
+0
+\end{bmatrix}
+```
 
 ### Homography Matrix Estimation
 
