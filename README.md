@@ -230,15 +230,14 @@ V_{9,1} &  \cdots &  V_{9,9}
 \end{bmatrix}
 ```
 
+
 The diagonal elements of $S$, $s_1, s_2, s_3, s_4, s_5, s_6, s_7, s_8, s_9$, are called the singular values of the decomposed matrix $A$. Each singular value $s_i$ has an associated column vector $u_i$ in $U$ called a left singular vector of $A$ and a dedicated row vector $v_i^T$ in $V^T$, called a right singular vector.
 
 The unit singular vector corresponding to the smallest singular value is the solution $h$. The solution is the eigenvector of $A^T A$ associated with the smallest eigenvalue, which is the right singular vector $v_k$ associated with the smallest singular value $s_k = \text{min}(s_1, \ldots, s_9)$.
 
-If the resulting homography transformation for the corresponding point sets is exact, the value of $s_k$ is zero. This is generally the case when the homography is calculated from 4 corresponding point pairs, which is the required minimum number to solve for the eight degrees of freedom.
+If the resulting homography transformation for the corresponding point sets is exact, the value of $s_k$ is zero. This is generally the case when the homography is calculated from 4 corresponding point pairs, which is the required minimum number to solve for the eight degrees of freedom. If more than 4 point pairs are involved, the system is overdetermined (which is the usual case). Here, the value of $s_k$ indicates the residual or “goodness of fit” of the resulting homography.
 
-If more than 4 point pairs are involved, the system is overdetermined (which is the usual case). Here, the value of $s_k$ indicates the residual or “goodness of fit” of the resulting homography.
-
-In the case of an overdetermined system, the obtained solution minimizes the equation $A h = 0$ in the least-squares sense. Here, instead of demanding an exact solution, one attempts to find an approximate solution, namely a vector \$h$ that minimizes a suitable cost function. The question that naturally arises then is: what should be minimized? Clearly, to avoid the solution $h = 0$ an additional constraint is required. Generally, a condition on the norm is used, such as $ \|h\| = 1$. The value of the norm is unimportant since \( h \) is only defined up to scale.
+In the case of an # overdetermined system #, the obtained solution minimizes the equation $A h = 0$ in the least-squares sense. Here, instead of demanding an exact solution, one attempts to find an approximate solution, namely a vector \$h$ that minimizes a suitable cost function. The question that naturally arises then is: what should be minimized? Clearly, to avoid the solution $h = 0$ an additional constraint is required. Generally, a condition on the norm is used, such as $ \|h\| = 1$. The value of the norm is unimportant since \( h \) is only defined up to scale.
 
 ```math
 \text{minimize} \, \| A h \| \, \text{such that} \, \| h \| = 1
