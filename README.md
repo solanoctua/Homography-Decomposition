@@ -174,7 +174,23 @@ To solve for the homography matrix, we need corresponding coordinate points. Eac
 
 In practice, more than four pairs of corresponding points are typically used to account for coordinate errors caused by noise. With \( n \) correspondences (\( n \geq 4 \)), a matrix \( A \) with dimensions \( 2n \times 9 \) is generated:
 ```math
-A = \begin{bmatrix} u_1 & v_1 & 1 & 0 & 0 & 0 & -u_1 u'_1 & -v_1 u'_1 & -u'_1 \ 0 & 0 & 0 & u_1 & v_1 & 1 & -u_1 v'_1 & -v_1 v'_1 & -v'_1 \ u_2 & v_2 & 1 & 0 & 0 & 0 & -u_2 u'_2 & -v_2 u'_2 & -u'_2 \ 0 & 0 & 0 & u_2 & v_2 & 1 & -u_2 v'_2 & -v_2 v'_2 & -v'_2 \ \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \ u_n & v_n & 1 & 0 & 0 & 0 & -u_n u'_n & -v_n u'_n & -u'_n \ 0 & 0 & 0 & u_n & v_n & 1 & -u_n v'_n & -v_n v'_n & -v'_n \end{bmatrix}
+A = \begin{bmatrix}
+u_1 & v_1 & 1 & 0 & 0 & 0 & -u_1 u'_1 & -v_1 u'_1 & -u'_1 \\
+0 & 0 & 0 & u_1 & v_1 & 1 & -u_1 v'_1 & -v_1 v'_1 & -v'_1 \\
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+ u_n & v_n & 1 & 0 & 0 & 0 & -u_n u'_n & -v_n u'_n & -u'_n \\
+ 0 & 0 & 0 & u_n & v_n & 1 & -u_n v'_n & -v_n v'_n & -v'_n
+\end{bmatrix}
+\begin{bmatrix}
+h_{11} \\ h_{12} \\ h_{13} \\ h_{21} \\ h_{22} \\ h_{23} \\ h_{31} \\ h_{32} \\ h_{33} 
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\ \vdots \\ \vdots \\ \vdots \\ \vdots \\ \vdots \\\vdots \\ \vdots \\ 0
+\end{bmatrix}
 ```
 Finally, Singular Value Decomposition (SVD) is used to obtain the homography matrix $H$. The matrix $H$ is extracted as the solution to the equation $A \mathbf{h} = 0$, where $\mathbf{h}$ is the vector of the elements of the homography matrix.
 ### Homography Matrix Estimation
