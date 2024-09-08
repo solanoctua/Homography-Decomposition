@@ -252,20 +252,6 @@ The solution is the (unit) eigenvector of $A^T A$ with the least eigenvalue. Equ
 For further details, one may refer to *Multiple View Geometry in Computer Vision*, Second Edition, Section 4.1 Estimation – 2D Projective Transformations, page 88. Or *Zhang's Camera Calibration Algorithm: In-Depth Tutorial and Implementation* Section 3.2.1.
 
 
-### Homography Matrix Estimation
-
-For each pair of corresponding points, we derive two linear equations. We need at least 4 pairs of points to compute the homography matrix between two images. In practice, more than 4 pairs are used to account for noise.
-
-### Singular Value Decomposition (SVD)
-
-To compute the homography matrix, we solve the equation $Ah = 0$ using SVD, where:
-
-```math
-A h = 0
-```
-
-The matrix $A$ has dimensions $2n \times 9$ for $n \geq 4$ correspondences. The solution for the homography matrix is obtained as the right singular vector corresponding to the smallest singular value of $A$.
-
 ### Decomposition of the Homography Matrix
 
 Given a homography matrix $H$ and intrinsic camera matrix $K$ , we can decompose $H$ into rotation matrices $R$, translation vectors $t$, and plane normals $n$ as:
@@ -275,16 +261,13 @@ H = K(R + \frac{1}{d} t n^T) K^{-1}
 ```
 
 ,where $d$ is the distance from the plane to the camera.
+## Faugeras SVD-based decomposition:
 
-#### Faugeras SVD-Based Decomposition
+## Theoretical Solutions
 
-The matrix $H$ can be decomposed as:
+## Extracting Euler Angles from Rotation Matrix 
 
-```math
-H = U \Lambda V^T
-```
 
-Where $U$ and $V$ are orthogonal matrices, and $\Lambda$ is a diagonal matrix containing the singular values of $H$.
 
 ### References
 
