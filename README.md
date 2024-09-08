@@ -123,16 +123,24 @@ h_{31} & h_{32} & h_{33}
 Expanding:
 
 ```math
-u' = h_{11} u + h_{12} v + h_{13} \\
-v' = h_{21} u + h_{22} v + h_{23} \\
+u' = h_{11} u + h_{12} v + h_{13}
+```
+```math
+v' = h_{21} u + h_{22} v + h_{23}
+```
+```math
 1 = h_{31} u + h_{32} v + h_{33}
 ```
 
 The equations for the transformed coordinates $(u', v')$ in homogeneous coordinates are given by:
 
 ```math
-u' = h_{11} u + h_{12} v + h_{13} \\
-v' = h_{21} u + h_{22} v + h_{23} \\
+u' = h_{11} u + h_{12} v + h_{13}
+```
+```math
+v' = h_{21} u + h_{22} v + h_{23}
+```
+```math
 1 = h_{31} u + h_{32} v + h_{33}
 ```
 
