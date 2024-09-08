@@ -45,11 +45,18 @@ Where:
 
 1. **Euclidean (Rigid) Transformation (3 DoF)**:
 ```math
-   \left[ \begin{matrix} s r_{11} & s r_{12} & t_x \\ s r_{21} & s r_{22} & t_y \\ 0 & 0 & 1 \end{matrix} \right]
+\left[
+\begin{matrix}
+s r_{11} & s r_{12} & t_x \\
+s r_{21} & s r_{22} & t_y \\
+0 & 0 & 1
+\end{matrix}
+\right]
 ```
 
 2. **Similarity Transformation (4 DoF)**:
 ```math
+H_S =
 \left[
 \begin{matrix}
 s_x r_{11} & s_x r_{12} & t_x \\
@@ -61,17 +68,25 @@ s_y r_{21} & s_y r_{22} & t_y \\
 
 3. **Affine Transformation (6 DoF)**:
 ```math
+H_A =
+\left[
 \begin{bmatrix}
 s_x r_{11} & S_h x r_{12} & t_x \\
 S_h y r_{21} & s_y r_{22} & t_y \\
 0 & 0 & 1
 \end{bmatrix}
+\right]
 ```
-
 
 4. **Projective Transformation (8 DoF)**
 ```math
-   H = \left[ \begin{matrix} h_{11} & h_{12} & h_{13} \\ h_{21} & h_{22} & h_{23} \\ h_{31} & h_{32} & h_{33} \end{matrix} \right]
+H_P =  = \left[
+\begin{matrix}
+h_{11} & h_{12} & h_{13} \\
+h_{21} & h_{22} & h_{23} \\
+h_{31} & h_{32} & h_{33}
+\end{matrix}
+\right]
 ```
 ### Homography and Image Transformation
 
