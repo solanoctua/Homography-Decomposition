@@ -50,11 +50,13 @@ Where:
 
 2. **Similarity Transformation (4 DoF)**:
 ```math
+\left[
 \begin{matrix}
 s_x r_{11} & s_x r_{12} & t_x \\
 s_y r_{21} & s_y r_{22} & t_y \\
 0 & 0 & 1
 \end{matrix}
+\right]
 ```
 
 3. **Affine Transformation (6 DoF)**:
@@ -65,66 +67,7 @@ S_h y r_{21} & s_y r_{22} & t_y \\
 0 & 0 & 1
 \end{bmatrix}
 ```
-s 
-x
-​
- , 
-𝑠
-𝑦
-s 
-y
-​
- : Scaling factors along the x and y axes.
-𝑟
-11
-,
-𝑟
-12
-,
-𝑟
-21
-,
-𝑟
-22
-r 
-11
-​
- ,r 
-12
-​
- ,r 
-21
-​
- ,r 
-22
-​
- : Rotation matrix components.
-𝑆
-ℎ
-𝑥
-S 
-h
-​
- x, 
-𝑆
-ℎ
-𝑦
-S 
-h
-​
- y: Shearing factors along the x and y axes.
-𝑡
-𝑥
-t 
-x
-​
- , 
-𝑡
-𝑦
-t 
-y
-​
- : Translation distances along the x and y axes.
+
 
 4. **Projective Transformation (8 DoF)**
 ```math
