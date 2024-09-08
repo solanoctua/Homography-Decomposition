@@ -220,8 +220,13 @@ U_{2n,1} & \cdots & U_{2n,2n}
 0 & 0 & 0 & 0 & 0 & 0 & 0 & 𝑠_8 & 0 \\
 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 𝑠_9 \\
 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-\cdots & \cdots & \cdots & \cdots & \cdots & \cdots & \cdots & \cdots & \cdots \\
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 
+\end{bmatrix}
+\begin{bmatrix}
+V_{1,1} &  \cdots &  V_{1,9} \\
+⋮ & ⋱ & ⋮ \\
+V_{9,1} &  \cdots &  V_{9,9}
 \end{bmatrix}
 ```
 ### Homography Matrix Estimation
