@@ -4,7 +4,7 @@ A homography is the most general formulation of linear transformations in 2D pro
 
 ### Homography Decomposition
 
-The homography matrix \( H \) can be decomposed as:
+The homography matrix \( $H$ \) can be decomposed as:
 
 ```math
 H = H_S H_A H_P = 
@@ -37,9 +37,9 @@ v^T & u
 
 
 Where:
-- \( H_S \): Similarity transformation (4 DoF)
-- \( H_A \): Affine transformation (6 DoF)
-- \( H_P \): Projective transformation (8 DoF)
+- \( $H_S$ \): Similarity transformation (4 DoF)
+- \( $H_A$ \): Affine transformation (6 DoF)
+- \( $H_P$ \): Projective transformation (8 DoF)
 
 ### Transformations Overview
 
