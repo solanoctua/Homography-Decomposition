@@ -140,8 +140,11 @@ Further, by multiplying the denominator to the left, we can transform the equati
 
 ```math
 (h_{31} u + h_{32} v + h_{33}) u' = h_{11} u + h_{12} v + h_{13} \\
+
 (h_{31} u + h_{32} v + h_{33}) v' = h_{21} u + h_{22} v + h_{23} \\
+
 \Rightarrow 0 = h_{11} u + h_{12} v + h_{13} - h_{31} u' u - h_{32} u' v - h_{33} u' \\
+
 \Rightarrow 0 = h_{21} u + h_{22} v + h_{23} - h_{31} v' u - h_{32} v' v - h_{33} v'
 ```
 
