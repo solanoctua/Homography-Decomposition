@@ -92,17 +92,17 @@ h_{31} & h_{32} & h_{33}
 
 The transformation of images is typically defined as the projection mapping between images of the same planar object taken from different positions by distortion-free cameras. The **Direct Linear Transformation (DLT)** is one of the simplest methods to estimate homography.
 
-Given homogeneous coordinates \( (u, v, 1) \) in the first image and \( (u', v', 1) \) in the second image, we have:
+Given homogeneous coordinates \( $(u, v, 1)$ \) in the first image and \( $(u', v', 1)$ \) in the second image, we have:
 
-\[
+```math
 \left[ \begin{matrix} u' \\ v' \\ 1 \end{matrix} \right] = \left[ \begin{matrix} h_{11} & h_{12} & h_{13} \\ h_{21} & h_{22} & h_{23} \\ h_{31} & h_{32} & h_{33} \end{matrix} \right] \left[ \begin{matrix} u \\ v \\ 1 \end{matrix} \right]
-\]
+```
 
 Expanding:
 
-\[
+```math
 u' = h_{11} u + h_{12} v + h_{13}, \quad v' = h_{21} u + h_{22} v + h_{23}
-\]
+```
 
 ### Homography Matrix Estimation
 
@@ -112,19 +112,19 @@ For each pair of corresponding points, we derive two linear equations. We need a
 
 To compute the homography matrix, we solve the equation \( Ah = 0 \) using SVD, where:
 
-\[
+```math
 A h = 0
-\]
+```
 
-The matrix \( A \) has dimensions \( 2n \times 9 \) for \( n \geq 4 \) correspondences. The solution for the homography matrix is obtained as the right singular vector corresponding to the smallest singular value of \( A \).
+The matrix \( $A$ \) has dimensions \( $2n \times 9$ \) for \( $n \geq 4$ \) correspondences. The solution for the homography matrix is obtained as the right singular vector corresponding to the smallest singular value of \( $A$ \).
 
 ### Decomposition of the Homography Matrix
 
-Given a homography matrix \( H \) and intrinsic camera matrix \( K \), we can decompose \( H \) into rotation matrices \( R \), translation vectors \( t \), and plane normals \( n \) as:
+Given a homography matrix \( H \) and intrinsic camera matrix \( $K$ \), we can decompose \( $H$ \) into rotation matrices \( $R$ \), translation vectors \( $t $\), and plane normals \( $n $\) as:
 
-\[
+```math
 H = K(R + \frac{1}{d} t n^T) K^{-1}
-\]
+```
 
 Where:
 - \( d \) is the distance from the plane to the camera.
@@ -137,7 +137,7 @@ The matrix \( H \) can be decomposed as:
 H = U \Lambda V^T
 \]
 
-Where \( U \) and \( V \) are orthogonal matrices, and \( \Lambda \) is a diagonal matrix containing the singular values of \( H \).
+Where \( $U$ \) and \( $V$ \) are orthogonal matrices, and \( $\Lambda$ \) is a diagonal matrix containing the singular values of \( $H$ \).
 
 ### References
 
