@@ -101,8 +101,30 @@ Given homogeneous coordinates $(u, v, 1)$ in the first image and $(u', v', 1)$ i
 Expanding:
 
 ```math
-u' = h_{11} u + h_{12} v + h_{13}, \quad v' = h_{21} u + h_{22} v + h_{23}
+u' = h_{11} u + h_{12} v + h_{13}
+v' = h_{21} u + h_{22} v + h_{23}
+1 = h_{31} u + h_{32} v + h_{33}
 ```
+
+The equations for the transformed coordinates $(u', v')$ in homogeneous coordinates are given by:
+
+```math
+u' = h_{11} u + h_{12} v + h_{13}
+v' = h_{21} u + h_{22} v + h_{23}
+1 = h_{31} u + h_{32} v + h_{33}
+```
+
+Further, by multiplying the denominator to the left, we can transform the equations into:
+
+```math
+(h_{31} u + h_{32} v + h_{33}) u' = h_{11} u + h_{12} v + h_{13}
+(h_{31} u + h_{32} v + h_{33}) v' = h_{21} u + h_{22} v + h_{23}
+```
+```math
+--> 0 = h_{11} u + h_{12} v + h_{13} - h_{31} u' u - h_{32} u' v - h_{33} u'
+```
+
+This is a pair of homogeneous equations (since the right hand side is zero).
 
 ### Homography Matrix Estimation
 
