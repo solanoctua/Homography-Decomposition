@@ -5,7 +5,8 @@ A homography is the most general formulation of linear transformations in 2D pro
 ### Homography Decomposition
 
 The homography matrix \( H \) can be decomposed as:
-$$
+
+```math
 \[
 H = H_S H_A H_P = 
 \left[ 
@@ -34,7 +35,7 @@ v^T & u
 \end{matrix} 
 \right]
 \]
-$$
+```math
 
 
 Where:
