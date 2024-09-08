@@ -45,6 +45,7 @@ Where:
 
 1. **Euclidean (Rigid) Transformation (3 DoF)**:
 ```math
+H_E =
 \left[
 \begin{matrix}
 s r_{11} & s r_{12} & t_x \\
@@ -78,7 +79,8 @@ S_h y r_{21} & s_y r_{22} & t_y \\
 
 4. **Projective Transformation (8 DoF)**
 ```math
-H_P =  = \left[
+H_P =
+\left[
 \begin{matrix}
 h_{11} & h_{12} & h_{13} \\
 h_{21} & h_{22} & h_{23} \\
